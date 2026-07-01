@@ -1,0 +1,36 @@
+{
+  "slug": "nhan-nha-chung-cu-mua-mua-checklist-noi-that",
+  "blog_id": "dd90bf31-6035-451d-9992-cb6d2cd2a04a",
+  "thumbnail": "e6ea4d47-1d2a-4174-b432-f79e842c6c11",
+  "thumbnail_resource": {
+    "id": "e6ea4d47-1d2a-4174-b432-f79e842c6c11",
+    "file_name": "e6ea4d47-1d2a-4174-b432-f79e842c6c11.png",
+    "file_size": 2458360,
+    "mime_type": "image/png",
+    "file_path": "images/thumbnails",
+    "source": "BLOG_THUMBNAIL",
+    "image_ratio": "landscape"
+  },
+  "uploads": [
+    {
+      "local": "outputs/images/thumbnails/nhan-nha-chung-cu-mua-mua-checklist-noi-that-thumbnail.png",
+      "object_path": "thumbnails/e6ea4d47-1d2a-4174-b432-f79e842c6c11.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/thumbnails/e6ea4d47-1d2a-4174-b432-f79e842c6c11.png"
+    },
+    {
+      "local": "outputs/images/body/nhan-nha-chung-cu-mua-mua-checklist-noi-that-body-01.png",
+      "object_path": "content/nhan-nha-chung-cu-mua-mua-checklist-noi-that/547e25c2-20a4-4140-84cd-a9812b405a78.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/nhan-nha-chung-cu-mua-mua-checklist-noi-that/547e25c2-20a4-4140-84cd-a9812b405a78.png"
+    },
+    {
+      "local": "outputs/images/body/nhan-nha-chung-cu-mua-mua-checklist-noi-that-body-03.png",
+      "object_path": "content/nhan-nha-chung-cu-mua-mua-checklist-noi-that/19492d68-4b31-47da-b028-938750e4e80f.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/nhan-nha-chung-cu-mua-mua-checklist-noi-that/19492d68-4b31-47da-b028-938750e4e80f.png"
+    },
+    {
+      "local": "outputs/images/body/nhan-nha-chung-cu-mua-mua-checklist-noi-that-body-02.png",
+      "object_path": "content/nhan-nha-chung-cu-mua-mua-checklist-noi-that/80376f37-3f9d-45ee-ad83-f5d1e1702b62.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/nhan-nha-chung-cu-mua-mua-checklist-noi-that/80376f37-3f9d-45ee-ad83-f5d1e1702b62.png"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "can-ho-mua-mua-giam-am-moc-mui-bi",
+  "blog_id": "9fb410ae-afa7-4d2c-aaa0-3986102e46ee",
+  "thumbnail": "b7487e83-0412-4974-9455-97f1f462c385",
+  "uploads": [
+    {
+      "local": "outputs/images/thumbnails/can-ho-mua-mua-giam-am-moc-mui-bi-thumbnail.png",
+      "object_path": "thumbnails/b7487e83-0412-4974-9455-97f1f462c385.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/thumbnails/b7487e83-0412-4974-9455-97f1f462c385.png"
+    },
+    {
+      "local": "outputs/images/body/can-ho-mua-mua-giam-am-moc-mui-bi-body-01.png",
+      "object_path": "content/can-ho-mua-mua-giam-am-moc-mui-bi/a0723c95-c559-4d15-b7a9-88f07404d181.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/can-ho-mua-mua-giam-am-moc-mui-bi/a0723c95-c559-4d15-b7a9-88f07404d181.png"
+    },
+    {
+      "local": "outputs/images/body/can-ho-mua-mua-giam-am-moc-mui-bi-body-02.png",
+      "object_path": "content/can-ho-mua-mua-giam-am-moc-mui-bi/9a78cf48-0534-4147-bb26-b701669f1ae4.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/can-ho-mua-mua-giam-am-moc-mui-bi/9a78cf48-0534-4147-bb26-b701669f1ae4.png"
+    },
+    {
+      "local": "outputs/images/body/can-ho-mua-mua-giam-am-moc-mui-bi-body-03.png",
+      "object_path": "content/can-ho-mua-mua-giam-am-moc-mui-bi/a34a5d82-16e1-46f7-945c-7054bdc8603e.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/can-ho-mua-mua-giam-am-moc-mui-bi/a34a5d82-16e1-46f7-945c-7054bdc8603e.png"
+    }
+  ]
+}

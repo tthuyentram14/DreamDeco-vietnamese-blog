@@ -1,0 +1,36 @@
+{
+  "slug": "can-ho-nho-khong-trong-trai-tao-lop-vat-lieu-anh-sang-decor",
+  "blog_id": "c5d19620-1477-4396-9b17-6b0a6c1075e8",
+  "thumbnail": "1eb5de32-68f1-404f-8eaf-6b13999591dd",
+  "thumbnail_resource": {
+    "id": "1eb5de32-68f1-404f-8eaf-6b13999591dd",
+    "file_name": "1eb5de32-68f1-404f-8eaf-6b13999591dd.png",
+    "file_size": 2566171,
+    "mime_type": "image/png",
+    "file_path": "images/thumbnails",
+    "source": "BLOG_THUMBNAIL",
+    "image_ratio": "landscape"
+  },
+  "uploads": [
+    {
+      "local": "outputs/images/thumbnails/can-ho-nho-khong-trong-trai-tao-lop-vat-lieu-anh-sang-decor-thumbnail.png",
+      "object_path": "thumbnails/1eb5de32-68f1-404f-8eaf-6b13999591dd.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/thumbnails/1eb5de32-68f1-404f-8eaf-6b13999591dd.png"
+    },
+    {
+      "local": "outputs/images/body/can-ho-nho-khong-trong-trai-tao-lop-vat-lieu-anh-sang-decor-body-01.png",
+      "object_path": "content/can-ho-nho-khong-trong-trai-tao-lop-vat-lieu-anh-sang-decor/31a12971-fb60-4d7e-aa19-c8c51a1cf174.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/can-ho-nho-khong-trong-trai-tao-lop-vat-lieu-anh-sang-decor/31a12971-fb60-4d7e-aa19-c8c51a1cf174.png"
+    },
+    {
+      "local": "outputs/images/body/can-ho-nho-khong-trong-trai-tao-lop-vat-lieu-anh-sang-decor-body-02.png",
+      "object_path": "content/can-ho-nho-khong-trong-trai-tao-lop-vat-lieu-anh-sang-decor/98d8a1fb-c9c0-4c58-b415-65bfd1a36c3d.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/can-ho-nho-khong-trong-trai-tao-lop-vat-lieu-anh-sang-decor/98d8a1fb-c9c0-4c58-b415-65bfd1a36c3d.png"
+    },
+    {
+      "local": "outputs/images/body/can-ho-nho-khong-trong-trai-tao-lop-vat-lieu-anh-sang-decor-body-03.png",
+      "object_path": "content/can-ho-nho-khong-trong-trai-tao-lop-vat-lieu-anh-sang-decor/2e4b1ad3-7a98-4c72-9718-1729452588c8.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/can-ho-nho-khong-trong-trai-tao-lop-vat-lieu-anh-sang-decor/2e4b1ad3-7a98-4c72-9718-1729452588c8.png"
+    }
+  ]
+}

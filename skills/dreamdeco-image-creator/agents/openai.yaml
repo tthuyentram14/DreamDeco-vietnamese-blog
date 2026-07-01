@@ -1,0 +1,6 @@
+interface:
+  display_name: "DreamDeco Image Creator"
+  short_description: "Generate original DreamDeco images."
+  default_prompt: "Use $dreamdeco-image-creator to generate original DreamDeco article images."
+policy:
+  allow_implicit_invocation: true

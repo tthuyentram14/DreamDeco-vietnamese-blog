@@ -1,0 +1,13 @@
+{
+  "verdict": "PASS",
+  "char_count": 18469,
+  "checks_passed": 9,
+  "issues": [],
+  "warnings": [
+    {
+      "check": 1,
+      "description": "Public body is long (18469); checked for obvious padding."
+    }
+  ],
+  "notes": "Sẵn sàng cho DB upload sau khi operator approve post-pipeline."
+}

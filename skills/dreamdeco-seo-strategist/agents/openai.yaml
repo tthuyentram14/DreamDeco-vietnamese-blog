@@ -1,0 +1,6 @@
+interface:
+  display_name: "DreamDeco SEO Strategist"
+  short_description: "Plan Vietnamese SEO for DreamDeco."
+  default_prompt: "Use $dreamdeco-seo-strategist to plan SEO for a DreamDeco article."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,13 @@
+{
+  "blog": {
+    "id": "4f6020c5-a40a-43a2-b9fc-6d5471c355ac",
+    "slug": "ngan-sach-30-trieu-noi-that-nha-co-tre",
+    "title": "30 triệu chỉnh nội thất nhà có trẻ: ưu tiên, phân bổ, tránh mua phí"
+  },
+  "hashtags": [
+    "Ngân sách thông minh",
+    "Căn hộ nhỏ",
+    "Mua sắm tiết kiệm"
+  ],
+  "images": "pending - cần tạo ảnh bằng Imagen2 rồi chạy: python scripts/upload-supabase-blog-images.py --slug ngan-sach-30-trieu-noi-that-nha-co-tre"
+}

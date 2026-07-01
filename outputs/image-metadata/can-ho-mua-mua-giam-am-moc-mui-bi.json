@@ -1,0 +1,59 @@
+{
+  "direction_map": {
+    "classification": {
+      "content_type": "consumer_guide",
+      "cultural_style_family": "Vietnamese tropical modern practical apartment",
+      "housing_type": "apartment",
+      "space_scale": "medium apartment",
+      "user_scenario": "young family or couple planning a rainy-season layout",
+      "zones": [
+        "entry",
+        "living room/logia",
+        "bedroom"
+      ]
+    },
+    "diversity_audit": [
+      "Thumbnail: cool grey-blue apartment living room, wide corner view, rainy logia, raised-leg sofa and wet-shoe tray.",
+      "Body 01: deep green entryway, eye-level doorway view, louvered shoe cabinet and rain gear buffer.",
+      "Body 02: sage living room/logia, sofa view, lightweight rug and balcony plants for airflow.",
+      "Body 03: muted indigo bedroom, corner view, bed clearance and wardrobe away from exterior wall."
+    ]
+  },
+  "thumbnail_image": {
+    "file_path": "outputs/images/thumbnails/can-ho-mua-mua-giam-am-moc-mui-bi-thumbnail.png",
+    "alt_text": "Phòng khách căn hộ Việt Nam mùa mưa với logia thoáng, sofa kê cao chân và cây xanh gần cửa kính",
+    "role": "thumbnail_image",
+    "prompt": "Vietnamese tropical modern apartment living room in rainy daylight, raised sofa away from balcony doors, airy logia, wet shoe tray near entry.",
+    "placement": "thumbnail",
+    "notes": "Tóm tắt lời hứa chính của bài: căn hộ mùa mưa vẫn thoáng nếu giữ đường gió và giảm điểm giữ ẩm."
+  },
+  "content_images": [
+    {
+      "file_path": "outputs/images/body/can-ho-mua-mua-giam-am-moc-mui-bi-body-01.png",
+      "alt_text": "Khu cửa vào căn hộ với tủ giày cánh nan, khay giày ướt và móc áo mưa riêng",
+      "role": "content_image",
+      "placement": "tu-giay-cua-vao",
+      "caption": "Khu cửa vào nên tách giày ướt, áo mưa và tủ giày sạch để mùi không bị nhốt trong một hộc kín.",
+      "prompt": "Compact Vietnamese apartment entryway, louvered shoe cabinet, wet shoe tray, umbrella stand, raincoat hook, grey tile and deep green palette.",
+      "notes": "Hỗ trợ section tủ giày và điểm kẹt khí ở cửa vào."
+    },
+    {
+      "file_path": "outputs/images/body/can-ho-mua-mua-giam-am-moc-mui-bi-body-02.png",
+      "alt_text": "Phòng khách căn hộ mùa mưa với sofa cách cửa logia, rèm mỏng và cây đặt ở vùng có gió",
+      "role": "content_image",
+      "placement": "phong-khach-logia-thoang",
+      "caption": "Sofa, rèm và cây xanh cần chừa đường gió từ logia vào phòng khách, nhất là trong ngày mưa kéo dài.",
+      "prompt": "Living room connected to logia, sage sofa, lightweight rug, sheer curtains, raised furniture legs, rainy daylight and balcony plants.",
+      "notes": "Minh họa layout phòng khách giữ luồng gió và giảm đồ giữ ẩm."
+    },
+    {
+      "file_path": "outputs/images/body/can-ho-mua-mua-giam-am-moc-mui-bi-body-03.png",
+      "alt_text": "Phòng ngủ căn hộ nhỏ với giường có gầm thoáng, tủ áo cách tường ngoài và cửa sổ ngày mưa",
+      "role": "content_image",
+      "placement": "phong-ngu-tuong-ngoai",
+      "caption": "Phòng ngủ mùa mưa nên tránh ép giường và tủ áo sát toàn bộ mảng tường ngoài.",
+      "prompt": "Small Vietnamese apartment bedroom, muted indigo wall, walnut bed with under-bed clearance, wardrobe away from exterior wall, rainy window.",
+      "notes": "Hỗ trợ section kê giường, tủ áo và khoảng hở sau đồ lớn."
+    }
+  ]
+}

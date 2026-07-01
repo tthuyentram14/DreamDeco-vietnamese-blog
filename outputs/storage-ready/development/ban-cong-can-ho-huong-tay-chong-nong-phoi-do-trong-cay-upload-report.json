@@ -1,0 +1,36 @@
+{
+  "slug": "ban-cong-can-ho-huong-tay-chong-nong-phoi-do-trong-cay",
+  "blog_id": "e1fba76d-03f4-485c-a669-a5824b6b70d1",
+  "thumbnail": "569cac76-66ce-47ab-a394-9f4db26ce045",
+  "thumbnail_resource": {
+    "id": "569cac76-66ce-47ab-a394-9f4db26ce045",
+    "file_name": "569cac76-66ce-47ab-a394-9f4db26ce045.png",
+    "file_size": 2442405,
+    "mime_type": "image/png",
+    "file_path": "images/thumbnails",
+    "source": "BLOG_THUMBNAIL",
+    "image_ratio": "landscape"
+  },
+  "uploads": [
+    {
+      "local": "outputs/images/thumbnails/ban-cong-can-ho-huong-tay-chong-nong-phoi-do-trong-cay-thumbnail.png",
+      "object_path": "thumbnails/569cac76-66ce-47ab-a394-9f4db26ce045.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/thumbnails/569cac76-66ce-47ab-a394-9f4db26ce045.png"
+    },
+    {
+      "local": "outputs/images/body/ban-cong-can-ho-huong-tay-chong-nong-phoi-do-trong-cay-body-01.png",
+      "object_path": "content/ban-cong-can-ho-huong-tay-chong-nong-phoi-do-trong-cay/aa576492-aced-4ff6-8d04-8784d7d0366a.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/ban-cong-can-ho-huong-tay-chong-nong-phoi-do-trong-cay/aa576492-aced-4ff6-8d04-8784d7d0366a.png"
+    },
+    {
+      "local": "outputs/images/body/ban-cong-can-ho-huong-tay-chong-nong-phoi-do-trong-cay-body-02.png",
+      "object_path": "content/ban-cong-can-ho-huong-tay-chong-nong-phoi-do-trong-cay/7e9d089a-3ada-4990-9dbe-3008ad734025.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/ban-cong-can-ho-huong-tay-chong-nong-phoi-do-trong-cay/7e9d089a-3ada-4990-9dbe-3008ad734025.png"
+    },
+    {
+      "local": "outputs/images/body/ban-cong-can-ho-huong-tay-chong-nong-phoi-do-trong-cay-body-03.png",
+      "object_path": "content/ban-cong-can-ho-huong-tay-chong-nong-phoi-do-trong-cay/72c5ec8a-870c-4393-9011-51853b449187.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/ban-cong-can-ho-huong-tay-chong-nong-phoi-do-trong-cay/72c5ec8a-870c-4393-9011-51853b449187.png"
+    }
+  ]
+}

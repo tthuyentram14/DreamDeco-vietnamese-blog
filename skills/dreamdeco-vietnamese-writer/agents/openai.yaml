@@ -1,0 +1,6 @@
+interface:
+  display_name: "DreamDeco Vietnamese Writer"
+  short_description: "Write natural, production-ready Vietnamese DreamDeco articles."
+  default_prompt: "Use $dreamdeco-vietnamese-writer to write a natural DreamDeco article from the research brief and SEO plan, then run the editorial self-check."
+policy:
+  allow_implicit_invocation: true

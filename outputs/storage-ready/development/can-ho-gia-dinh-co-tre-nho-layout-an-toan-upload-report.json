@@ -1,0 +1,36 @@
+{
+  "slug": "can-ho-gia-dinh-co-tre-nho-layout-an-toan",
+  "blog_id": "80e70547-7140-4318-98e4-3856b9e2a272",
+  "thumbnail": "f145ac4c-0776-45f8-8c64-ca458b00a690",
+  "thumbnail_resource": {
+    "id": "f145ac4c-0776-45f8-8c64-ca458b00a690",
+    "file_name": "f145ac4c-0776-45f8-8c64-ca458b00a690.png",
+    "file_size": 2531418,
+    "mime_type": "image/png",
+    "file_path": "images/thumbnails",
+    "source": "BLOG_THUMBNAIL",
+    "image_ratio": "landscape"
+  },
+  "uploads": [
+    {
+      "local": "outputs/images/thumbnails/can-ho-gia-dinh-co-tre-nho-layout-an-toan-thumbnail.png",
+      "object_path": "thumbnails/f145ac4c-0776-45f8-8c64-ca458b00a690.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/thumbnails/f145ac4c-0776-45f8-8c64-ca458b00a690.png"
+    },
+    {
+      "local": "outputs/images/body/can-ho-gia-dinh-co-tre-nho-layout-an-toan-body-01.png",
+      "object_path": "content/can-ho-gia-dinh-co-tre-nho-layout-an-toan/204a5a72-085e-489f-a065-7f996eee262f.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/can-ho-gia-dinh-co-tre-nho-layout-an-toan/204a5a72-085e-489f-a065-7f996eee262f.png"
+    },
+    {
+      "local": "outputs/images/body/can-ho-gia-dinh-co-tre-nho-layout-an-toan-body-02.png",
+      "object_path": "content/can-ho-gia-dinh-co-tre-nho-layout-an-toan/7da6d504-bfc9-4a66-b4bd-1cd5d3e6ea6c.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/can-ho-gia-dinh-co-tre-nho-layout-an-toan/7da6d504-bfc9-4a66-b4bd-1cd5d3e6ea6c.png"
+    },
+    {
+      "local": "outputs/images/body/can-ho-gia-dinh-co-tre-nho-layout-an-toan-body-03.png",
+      "object_path": "content/can-ho-gia-dinh-co-tre-nho-layout-an-toan/1dc89108-24a2-458b-b248-7b9d29ef9b7c.png",
+      "url": "https://jszlrcpbcdbqiqhvvddy.supabase.co/storage/v1/object/public/images/content/can-ho-gia-dinh-co-tre-nho-layout-an-toan/1dc89108-24a2-458b-b248-7b9d29ef9b7c.png"
+    }
+  ]
+}

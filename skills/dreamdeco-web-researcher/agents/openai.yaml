@@ -1,0 +1,6 @@
+interface:
+  display_name: "DreamDeco Web Researcher"
+  short_description: "Research DreamDeco topics with sources."
+  default_prompt: "Use $dreamdeco-web-researcher to research a DreamDeco blog topic."
+policy:
+  allow_implicit_invocation: true

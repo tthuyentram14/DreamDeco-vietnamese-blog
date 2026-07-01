@@ -1,0 +1,6 @@
+interface:
+  display_name: "DreamDeco Content Reviewer"
+  short_description: "QA gate for DreamDeco articles."
+  default_prompt: "Use $dreamdeco-content-reviewer to review the article package before DB upload."
+policy:
+  allow_implicit_invocation: true

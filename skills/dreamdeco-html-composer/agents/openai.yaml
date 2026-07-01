@@ -1,0 +1,6 @@
+interface:
+  display_name: "DreamDeco HTML Composer"
+  short_description: "Compose HTML and JSON packages for DreamDeco articles."
+  default_prompt: "Use $dreamdeco-html-composer to compose the HTML fragment and JSON package from the approved draft and images."
+policy:
+  allow_implicit_invocation: true

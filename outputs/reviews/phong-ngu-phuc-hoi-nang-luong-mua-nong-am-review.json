@@ -1,0 +1,6 @@
+{
+  "verdict": "PASS",
+  "char_count": 11816,
+  "checks_passed": 9,
+  "notes": "Sẵn sàng cho DB upload lại theo frontend-rendering-context.md mới. Public body nằm trong khung 8,000-12,000 ký tự; package đầy đủ; ảnh public tồn tại trong content_html; thumbnail không nằm trong content_html; fragment không còn style/import standalone; inline CSS dùng custom properties; SEO title/meta/slug hợp lệ; AI disclosure đúng."
+}

@@ -1,0 +1,22 @@
+{
+  "direction_map": {
+    "classification": {
+      "content_type": "lifestyle",
+      "cultural_style_family": "Vietnamese tropical modern practical apartment",
+      "housing_type": "apartment",
+      "space_scale": "small to medium apartment bedroom",
+      "user_scenario": "couple or single renter refreshing bedroom for hot humid season",
+      "zones": [
+        "bedroom",
+        "wardrobe wall",
+        "bedside lighting"
+      ]
+    },
+    "diversity_audit": [
+      "Thumbnail: sage and soft white wide bedroom view with ceiling fan, sheer curtain and dehumidifier.",
+      "Body 01: blue-grey and terracotta daylight bedroom, doorway view, color decision.",
+      "Body 02: indigo and amber evening bedroom, bedside lighting and low stimulus before sleep.",
+      "Body 03: olive, rattan and charcoal material detail, wardrobe ventilation and under-bed clearance."
+    ]
+  }
+}
