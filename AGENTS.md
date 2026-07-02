@@ -157,7 +157,7 @@ Mỗi bài viết phải:
 ## HTML Rules
 
 - Wrapper: `<div class="prose prose-gray max-w-none text-gray-800 leading-relaxed">`
-- Styling: dual approach — mỗi element có cả Tailwind classes lẫn inline style hex/px fallback (`content_html` render ngoài React tree qua `dangerouslySetInnerHTML`, không đảm bảo Tailwind/CSS var luôn sẵn sàng). `var(--foreground)` chỉ dùng cho H2/H3 color. Chi tiết: `skills/dreamdeco-html-composer/references/frontend-rendering-context.md`
+- Styling: CSS custom properties từ `globals.css` (không hardcode hex/radius/shadow). Dùng Tailwind utility classes (đã backed bởi CSS var của Tailwind v4) làm cơ chế styling chính; `var(--foreground)` chỉ dùng cho H2/H3 color. Chi tiết: `skills/dreamdeco-html-composer/references/frontend-rendering-context.md`
 - Thumbnail KHÔNG trong production `content_html`
 - Visual modules: HTML/CSS components, không JavaScript/React/external CSS
 - AI disclosure bắt buộc cuối bài

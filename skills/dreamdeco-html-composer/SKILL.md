@@ -39,14 +39,14 @@ Wrapper bắt buộc:
 </div>
 ```
 
-**Styling rules (dual approach):**
-- Mỗi element phải có CẢ Tailwind classes VÀ inline style fallback với hex values
-- Mỗi module type dùng color scheme riêng (sky, emerald, amber, violet, pink, slate) — xem `references/frontend-rendering-context.md`
-- Inline styles dùng `px` cho spacing/radius, hex cho colors
-- `var(--foreground)` chỉ dùng cho H2, H3 text color
-- Border radius: wrapper `14px`, inner cards `10px`, images `12px`, pills `999px`
-- Shadow: `0 1px 3px rgba(15,23,42,0.06)`
-- KHÔNG dùng `var(--primary)`, `var(--muted)`, `var(--border)` cho module styling
+**Styling rules (CSS custom properties):**
+- Styling chính bằng Tailwind utility classes — utilities này đã backed bởi CSS custom properties của Tailwind v4/`globals.css`, không cần inline hex/px fallback
+- KHÔNG hardcode hex color, `border-radius: Npx`, hoặc `box-shadow` không chứa `var(...)` trong inline style
+- Mỗi module type dùng color scheme riêng (sky, emerald, amber, violet, pink, slate) qua Tailwind class — xem `references/frontend-rendering-context.md`
+- `var(--foreground)` chỉ dùng cho H2, H3 text color (qua inline style hoặc arbitrary class `text-[color:var(--foreground)]`)
+- Border radius: wrapper `rounded-xl`, inner cards `rounded-lg`, images `rounded-lg`, pills `rounded-full`
+- Shadow: `shadow-sm`
+- Ngoại lệ hex hợp lệ: màu thực tế của material swatch (dữ liệu nội dung, không phải design token)
 
 **HTML phải bao gồm:**
 - Tóm tắt ngắn (lead paragraph)
@@ -79,9 +79,9 @@ Xuất JSON khớp contract tại `references/json-package-schema.md`. JSON ph�
 
 ### Bước 4: Self-check
 
-- [ ] Mỗi element có CẢ Tailwind classes VÀ inline style fallback
+- [ ] Styling dùng Tailwind utility classes, không có inline hex color/px-radius/non-var shadow
 - [ ] Mỗi module dùng color scheme riêng (không trùng trong bài)
-- [ ] Inline styles dùng hex colors + px spacing (không dùng var(--primary/muted/border) cho modules)
+- [ ] Không hardcode hex ngoài material swatches (dữ liệu nội dung)
 - [ ] Thumbnail KHÔNG trong content_html
 - [ ] Mỗi body image có `<figure>` + alt text tiếng Việt, border-radius:12px
 - [ ] Visual modules render đúng type với badge pill
@@ -102,5 +102,5 @@ outputs/final-posts/json/<slug>.json    — JSON package
 
 - Visual modules (tables, charts, checklists, step flows, infographics) = HTML/CSS. Không dùng Imagen2 cho data visualization.
 - Không import React components, JavaScript, external CSS, shadcn/ui imports trong fragment.
-- Dual approach: Tailwind classes + inline hex fallbacks. Xem `references/visual-module-patterns.md` cho templates.
+- Styling: Tailwind utility classes, CSS custom properties — không hardcode hex/radius/shadow. Xem `references/visual-module-patterns.md` cho templates.
 - Không tạo mock content, placeholder text, hoặc empty modules.
