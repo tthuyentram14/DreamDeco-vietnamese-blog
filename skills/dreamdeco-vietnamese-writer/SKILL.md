@@ -14,6 +14,9 @@ allowed-tools: Read Write Edit Grep Glob AskUserQuestion
 
 Viết như một biên tập viên nội thất đang giúp người đọc xử lý một tình huống thật trong nhà họ. Ưu tiên insight, bối cảnh sống ở Việt Nam, đánh đổi cụ thể và nhịp văn tự nhiên. Đừng cố "đạt checklist" ngay trong câu chữ đầu tiên; viết bản nháp có ý trước, rồi biên tập bằng checklist sau.
 
+- Một bài = một `category` nhất quán từ research brief đến bản viết cuối — không tự đổi category giữa chừng cho vừa nội dung đã viết.
+- Nguồn tham khảo có bản quyền (vietnamnet, vnexpress...) chỉ dùng để hiểu ý tưởng/dữ kiện thật, không dịch sát hay diễn đạt lại theo đúng cấu trúc câu gốc.
+
 Trước khi viết, đọc đầy đủ:
 
 - `references/brand-voice.md` — giọng DreamDeco, ví dụ before/after
@@ -49,7 +52,22 @@ Từ research brief + SEO plan, ghi nhanh 5 dòng nội bộ trước khi draft:
 | `dreamdeco_guide` | Hướng dẫn rõ ràng, từng bước | Step flow → checklist → kết quả trước/sau |
 | `consumer_guide` | Trung lập, cảnh báo rủi ro | Checklist → bảng so sánh → red flags |
 
-### Bước 2: Dựng mạch bài, không dựng khuôn
+### Bước 2: Chọn category
+
+`category` là field taxonomy cho DB, khác với `content_type` ở Bước 1. Phải đúng 1 trong 6 giá trị sau — khớp `category_ok` trong `scripts/qa-single-blog-package.mjs` và bảng hashtag trong `prepare-supabase-blog-payload.mjs`:
+
+| category | Dùng khi |
+|---|---|
+| `news_magazine` | Tin tức/xu hướng nội thất chung, không gắn 1 case cụ thể |
+| `global_local_styles` | Case study theo phong cách/quốc tế (Nordic, Korean minimal, Japandi, châu Âu...) |
+| `budget_scale` | Bài có số liệu chi phí/ngân sách cụ thể, căn hộ nhỏ |
+| `lifestyle_age` | Nhu cầu sử dụng theo lối sống/độ tuổi/giai đoạn gia đình (home office, gia đình trẻ...) |
+| `dreamdeco_guide` | Bài hướng dẫn trực tiếp cách dùng tính năng DreamDeco |
+| `consumer_guide` | Hướng dẫn mua sắm nội thất (nên/không nên mua gì) |
+
+Nếu một bài có thể khớp 2 category, chọn category sát với **góc chính** của bài (câu hỏi chính bài trả lời cho người đọc), không chọn theo đồ vật xuất hiện trong bài. Chốt category ở bước này — Output JSON dùng nguyên giá trị này, không đổi lại ở bước biên tập hay self-check.
+
+### Bước 3: Dựng mạch bài, không dựng khuôn
 
 Phác mạch bài bằng các ý cần đọc, không bằng số mục đều nhau. Mỗi H2 nên có một vai trò riêng: mở vấn đề, so sánh lựa chọn, hướng dẫn thực hành, cảnh báo sai lầm, hoặc gắn DreamDeco. Không bắt mọi section đi cùng công thức vấn đề → giải pháp → ví dụ → takeaway nếu nội dung không cần.
 
@@ -65,7 +83,7 @@ Kết + CTA:                      700
 Visual modules (text trong bảng/checklist): 500
 ```
 
-### Bước 3: Viết bản nháp reader-first
+### Bước 4: Viết bản nháp reader-first
 
 Trong lượt viết đầu, tập trung vào nội dung đọc được:
 
@@ -75,6 +93,7 @@ Trong lượt viết đầu, tập trung vào nội dung đọc được:
 - Đổi một phần câu khuyên thành câu quan sát hoặc hệ quả. Bài hay không nên đọc như một danh sách mệnh lệnh.
 - Để module, bảng, checklist xuất hiện khi nó thật sự giúp người đọc so sánh hoặc kiểm tra.
 - Nhắc DreamDeco 1-2 lần ở điểm có ích: xem trước layout, kiểm tra kích thước, so sánh phong cách/vật liệu.
+- Không copy nguyên câu từ nguồn tham khảo có bản quyền (vietnamnet, vnexpress...) — chỉ dùng để hiểu ý tưởng/dữ kiện, viết lại hoàn toàn bằng cấu trúc câu và cách diễn đạt riêng.
 
 Fact discipline vẫn áp dụng trong lúc viết:
 - `fact_sourced`: viết như fact
@@ -82,7 +101,7 @@ Fact discipline vẫn áp dụng trong lúc viết:
 - `opinion_editorial`: ghi rõ là khuyến nghị DreamDeco
 - Không bịa số liệu không có trong research brief
 
-### Bước 4: Biên tập sau draft
+### Bước 5: Biên tập sau draft
 
 Sau khi đã có bản nháp đủ ý, đọc lại như editor:
 
@@ -91,8 +110,9 @@ Sau khi đã có bản nháp đủ ý, đọc lại như editor:
 - Kiểm tra nhịp đoạn: tránh nhiều đoạn liên tiếp mở cùng khuôn, tránh mọi list/bảng đều cân đối hoàn hảo.
 - Sửa ngữ pháp, dấu thanh, xưng hô và thuật ngữ.
 - Đếm ký tự public body; nếu dưới 8,000, chỉ bổ sung phần còn thiếu bằng ví dụ, checklist, so sánh hoặc rủi ro thật.
+- QA gate (`scripts/qa-single-blog-package.mjs`) chặn theo substring nguyên văn, không xét ngữ cảnh — ví dụ "Không chỉ" bị chặn dù đứng một mình, không cần đi kèm "mà còn". Xem danh sách khớp chính xác QA gate trong `references/vietnamese-writing-standards.md` mục 1.
 
-### Bước 5: Đánh dấu visual modules và image placements
+### Bước 6: Đánh dấu visual modules và image placements
 
 Chỉ đánh dấu module/image sau khi mạch bài đã ổn:
 
@@ -103,9 +123,9 @@ Chỉ đánh dấu module/image sau khi mạch bài đã ổn:
 [IMAGE: section-name | mô tả ngắn cho image creator]
 ```
 
-### Bước 6: Self-check trước khi handoff
+### Bước 7: Self-check trước khi handoff
 
-Kiểm tra 6 hạng mục trước khi giao draft:
+Kiểm tra 7 hạng mục trước khi giao draft:
 
 - [ ] **Độ dài**: >= 8,000 ký tự tiếng Việt public body (đếm thực tế, ghi số)
 - [ ] **Meaning-first**: Chọn 3 đoạn bất kỳ — mỗi đoạn phải nêu tình huống/vấn đề/giải pháp cụ thể
@@ -113,6 +133,7 @@ Kiểm tra 6 hạng mục trước khi giao draft:
 - [ ] **Fact audit**: Mọi số liệu có nguồn từ research brief
 - [ ] **Nguồn Việt**: Ít nhất 1 nguồn tiếng Việt được sử dụng (nếu brief có)
 - [ ] **AI disclosure**: Ghi chú AI disclosure cho cuối bài
+- [ ] **Category**: đúng 1 trong 6 giá trị hợp lệ, khớp category đã chốt ở Bước 2
 
 ## Output
 
@@ -124,7 +145,7 @@ Draft có cấu trúc:
   "slug": "tieu-de-bai-viet",
   "meta_description": "Mô tả meta < 160 ký tự",
   "excerpt": "Đoạn trích ngắn",
-  "category": "style | budget | lifestyle | ...",
+  "category": "news_magazine | global_local_styles | budget_scale | lifestyle_age | dreamdeco_guide | consumer_guide",
   "content_type": "style | news | ...",
   "sections": [
     {
@@ -164,3 +185,4 @@ Draft có cấu trúc:
 - Câu vague-but-polished (nghe hay nhưng không nói gì cụ thể) = phải viết lại
 - Số liệu không có nguồn = phải xóa hoặc hedge
 - Giọng marketing/quảng cáo = phải chuyển về giọng biên tập
+- Category không thuộc đúng 6 giá trị hợp lệ = chưa hoàn thành, không handoff

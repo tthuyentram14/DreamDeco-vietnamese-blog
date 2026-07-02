@@ -31,7 +31,7 @@ Không re-check exhaustive từng quy tắc ngữ pháp — writer đã làm. Ri
 | 2 | Package completeness | Thiếu required JSON fields |
 | 3 | Category | Không phải 1 trong 6 giá trị hợp lệ |
 | 4 | Image integrity | Thumbnail trong content_html, hoặc images không tồn tại |
-| 5 | CSS standards | Hardcode hex/radius/shadow thay vì CSS custom properties |
+| 5 | CSS standards | Heading/box/figure/CTA/disclosure thiếu inline hex/px fallback, dùng sai `var(--primary/muted/border)`, hoặc đoạn văn thường bị lỡ thêm class/style |
 | 6 | Meaning-first spot-check | 3 đoạn random mà đoạn nào vague/filler |
 | 7 | Anti-AI spot-check | Chứa top 10 cụm AI (S1), HOẶC lặp khuôn mở đoạn 2+ lần, HOẶC >40% câu kiểu nên/cần/phải |
 | 8 | SEO sanity | Title > 70 chars, meta > 160 chars, slug format sai |

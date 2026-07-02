@@ -6,6 +6,21 @@ Tài liệu này gộp 3 tiêu chuẩn thành 1: anti-AI patterns, ngữ pháp t
 
 ## 1. Anti-AI Patterns — Danh sách KHÔNG VIẾT
 
+### QA gate — khớp substring nguyên văn, không xét ngữ cảnh
+
+`scripts/qa-single-blog-package.mjs` fail bài ngay khi `content_html` chứa nguyên văn 1 trong 10 cụm dưới đây, bất kể ngữ cảnh câu — kể cả khi cụm đứng riêng, không đi kèm phần diễn giải quen thuộc (vd. "Không chỉ" bị chặn dù không có "mà còn" theo sau). Tránh tuyệt đối cả 10 cụm này, không chỉ tránh cấu trúc rộng hơn ở S1-S3 bên dưới:
+
+- "Hãy cùng khám phá"
+- "Hãy cùng tìm hiểu"
+- "Không chỉ"
+- "thực sự rất"
+- "hoàn toàn mới mẻ"
+- "Hy vọng bài viết"
+- "Bạn đã bao giờ"
+- "Vậy thì"
+- "Đặc biệt hơn"
+- "Tóm lại, có thể thấy"
+
 ### Mức S1 (Critical) — Một lần xuất hiện đã là dấu hiệu AI
 
 **Cụm mở đầu công thức:**

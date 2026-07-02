@@ -8,9 +8,9 @@ Blog `content_html` được lưu trong database và inject qua React `dangerous
 
 Content kế thừa CSS custom properties và Tailwind utilities từ `globals.css` của app.
 
-## Nguyên tắc styling: Dual approach
+## Nguyên tắc styling: Dual approach (chỉ heading/box/figure/CTA/disclosure)
 
-Mỗi element phải có **cả Tailwind classes LẪN inline style fallback** với hex values. Tailwind classes là primary, inline styles đảm bảo render đúng nếu class chưa load.
+Heading (H2/H3), box màu, `<figure>`, CTA và disclosure phải có **cả Tailwind classes LẪN inline style fallback** với hex values, vì `content_html` nằm ngoài React component tree (Tailwind compile-time không quét được). Đoạn văn thường (trừ sapo) thì để trần, không thêm class/style — xem mục "Body paragraph" bên dưới.
 
 ```html
 <!-- Pattern chuẩn: class + style song song -->
@@ -176,7 +176,8 @@ var(--shadow-sm)  /* ~ 0 1px 3px rgba(15,23,42,0.06) */
 ## Quy tắc
 
 ### BẮT BUỘC
-- Mỗi element có CẢ Tailwind classes VÀ inline style fallback
+- Heading/box/figure/CTA/disclosure có CẢ Tailwind classes VÀ inline style fallback
+- Đoạn văn thường (trừ sapo) để trần, không thêm class/style — kế thừa từ wrapper `prose`
 - Mỗi module type dùng bảng màu riêng (xem bảng Module color schemes)
 - Badge/pill dùng `border-radius:999px`
 - Inline styles dùng `px` cho spacing, không dùng `rem`

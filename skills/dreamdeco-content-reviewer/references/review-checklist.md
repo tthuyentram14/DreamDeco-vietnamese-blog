@@ -49,17 +49,15 @@ Phải là 1 trong:
 
 ## Check 5: CSS standards
 
+`content_html` được inject qua `dangerouslySetInnerHTML`, ngoài React component tree — Tailwind compile-time không quét được class trong đó, nên `dreamdeco-html-composer` **bắt buộc** dùng hex/px hardcode cho heading/box/figure/CTA/disclosure (xem `dreamdeco-html-composer/references/frontend-rendering-context.md`). Check này xác nhận composer làm đúng quy tắc đó, không phải chặn hex.
+
 Scan `content_html` cho:
-- Hardcoded hex colors: regex `#[0-9A-Fa-f]{3,8}` (ngoại trừ material palette swatches)
-- Hardcoded radius: `border-radius: \d+px`
-- Hardcoded shadows: `box-shadow:` không chứa `var(`
-- JavaScript, `<script>`, React components, external CSS imports
+1. Heading (H2/H3), box màu, `<figure>`, CTA, disclosure phải có **cả** Tailwind class lẫn inline style (hex color, `px` cho radius/spacing) — chỉ có class suông không có style inline = **FAIL** (sẽ hiển thị sai trên site thật).
+2. Module background/border dùng `var(--primary)`, `var(--tertiary)`, `var(--muted)`, hoặc `var(--border)` thay vì hex từ bảng color scheme chuẩn = **FAIL**. Chỉ `var(--foreground)` (H2/H3 text) và `var(--font-sans)` (lead paragraph font-family) là ngoại lệ hợp lệ.
+3. Đoạn văn thường (`<p>` thân bài, trừ đoạn sapo đầu tiên) có `class` hoặc `style` = **FAIL** — phải để trần, kế thừa từ wrapper `prose prose-gray max-w-none text-gray-800 leading-relaxed`.
+4. JavaScript, `<script>`, React components, external CSS imports = **FAIL**.
 
-**FAIL** nếu có hardcoded values ngoài material swatches.
-
-Cách phân biệt swatch vs hardcode:
-- Swatch: nằm trong element nhỏ (width/height <= 5rem), có context palette/color/material
-- Hardcode: áp dụng cho card, section, background lớn
+Cách phân biệt material swatch với box/module: swatch nằm trong element nhỏ (width/height <= 5rem), thể hiện màu vật liệu thực tế (sơn, gỗ, vải...) — dùng hex tùy ý theo màu thật, không cần khớp bảng color scheme chuẩn. Box/module (card, section, background lớn) phải dùng đúng hex trong bảng color scheme tại `frontend-rendering-context.md`, không tự chế hex khác.
 
 ## Check 6: Meaning-first spot-check
 
