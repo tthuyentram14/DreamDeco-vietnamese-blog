@@ -6,121 +6,106 @@ Blog `content_html` được lưu trong database và inject qua React `dangerous
 
 **Stack:** Next.js + Tailwind CSS v4 + shadcn/ui
 
-Content kế thừa CSS custom properties và Tailwind utilities từ `globals.css` của app.
+Content kế thừa CSS custom properties và Tailwind utilities từ `globals.css` của app — vì `content_html` render vào cùng document, dùng chung stylesheet với phần còn lại của trang. Tailwind utility classes (`bg-sky-50`, `rounded-xl`, `shadow-sm`...) áp dụng bình thường bất kể element được tạo bởi React hay set qua `innerHTML`, vì CSS cascade dựa trên class selector chứ không phụ thuộc React tree.
 
 ## Nguyên tắc styling: Dual approach (chỉ heading/box/figure/CTA/disclosure)
 
 Heading (H2/H3), box màu, `<figure>`, CTA và disclosure phải có **cả Tailwind classes LẪN inline style fallback** với hex values, vì `content_html` nằm ngoài React component tree (Tailwind compile-time không quét được). Đoạn văn thường (trừ sapo) thì để trần, không thêm class/style — xem mục "Body paragraph" bên dưới.
 
 ```html
-<!-- Pattern chuẩn: class + style song song -->
-<div class="my-10 rounded-xl border border-sky-200 bg-sky-50 p-5 md:p-6 shadow-sm"
-     style="margin:40px 0;padding:24px;background:#eff6ff;border:1px solid #bae6fd;border-radius:14px;box-shadow:0 1px 3px rgba(15,23,42,0.08);">
+<!-- Pattern chuẩn: chỉ Tailwind classes, không inline hex/radius/shadow -->
+<div class="my-10 rounded-xl border border-sky-200 bg-sky-50 p-5 md:p-6 shadow-sm">
 ```
 
-## Text color palette (hex)
+Chỉ dùng inline `style` khi:
+- Cần `var(--foreground)` / `var(--font-sans)` cho H2/H3, lead paragraph (token không có class Tailwind tương ứng)
+- Layout grid cần `auto-fit`/`minmax` — dùng Tailwind arbitrary value class (`grid-cols-[repeat(auto-fit,minmax(220px,1fr))]`), không phải inline style
+- Material swatch: màu thực tế của vật liệu nội thất (dữ liệu nội dung, không phải design token)
+
+## Text color
 
 ```
-#0f172a  — Heading, tiêu đề chính (slate-950)
-#1e293b  — Body text đậm (slate-800)
-#334155  — Label, badge text trung tính (slate-700)
-#475569  — Body text phụ, mô tả trong card (slate-600)
-#64748b  — Caption, figcaption, ghi chú nhỏ (slate-500)
+text-slate-950   — Heading, tiêu đề chính
+text-slate-800   — Body text đậm
+text-slate-700   — Label, badge text trung tính
+text-slate-600   — Body text phụ, mô tả trong card
+text-slate-500   — Caption, figcaption, ghi chú nhỏ
 ```
 
-`var(--foreground)` chỉ dùng cho H2, H3 — nơi cần sync với theme. Các text khác dùng hex.
+`var(--foreground)` chỉ dùng cho H2, H3 — nơi cần sync với theme. Các text khác dùng Tailwind text color class.
 
 ## Module color schemes
 
-Mỗi module type có bảng màu riêng. KHÔNG dùng chung 1 màu cho tất cả modules.
+Mỗi module type có bảng màu riêng qua Tailwind class. KHÔNG dùng chung 1 màu cho tất cả modules.
 
 | Module | BG | Border | Badge BG | Badge Text | Inner Card Border |
 |---|---|---|---|---|---|
-| summary_card | `#eff6ff` | `#bae6fd` | `#fff` | `#0369a1` | `#dbeafe` |
-| checklist | `#ecfdf5` | `#a7f3d0` | `#fff` | `#047857` | `#bbf7d0` |
-| material_palette | `#fffbeb` | `#fde68a` | `#fff` | `#b45309` | `#fde68a` |
-| step_flow | `#f5f3ff` | `#c4b5fd` | `#fff` | `#6d28d9` | `#ddd6fe` |
-| data_table | `#fff` | `#e2e8f0` | `#f1f5f9` | `#334155` | — |
-| stat_cards | `#fff` | `#e2e8f0` | — | — | — |
-| comparison_grid | `#fff` | `#e2e8f0` | — | — | — |
-| timeline | `#fdf2f8` | `#f9a8d4` | `#fff` | `#be185d` | `#fbcfe8` |
-| warning/alert | `#fef2f2` | `#fecaca` | `#fff` | `#b91c1c` | `#fecaca` |
-| navigation/TOC | `#fff` | `#e2e8f0` | — | `#64748b` | — |
+| summary_card | `bg-sky-50` | `border-sky-200` | `bg-white` | `text-sky-700` | `border-sky-100` |
+| checklist | `bg-emerald-50` | `border-emerald-200` | `bg-white` | `text-emerald-700` | `border-emerald-100` |
+| material_palette | `bg-amber-50` | `border-amber-200` | `bg-white` | `text-amber-700` | `border-amber-100` |
+| step_flow | `bg-violet-50` | `border-violet-200` | `bg-white` | `text-violet-700` | `border-violet-100` |
+| data_table | `bg-white` | `border-slate-200` | `bg-slate-100` | `text-slate-700` | — |
+| stat_cards | `bg-white` | `border-slate-200` | — | — | — |
+| comparison_grid | `bg-white` | `border-slate-200` | — | — | — |
+| timeline | `bg-pink-50` | `border-pink-200` | `bg-white` | `text-pink-700` | `border-pink-100` |
+| warning/alert | `bg-red-50` | `border-red-200` | `bg-white` | `text-red-700` | `border-red-100` |
+| navigation/TOC | `bg-white` | `border-slate-200` | — | `text-slate-500` | — |
 
-Tailwind class mapping:
-- sky: `bg-sky-50 border-sky-200 text-sky-700`
-- emerald: `bg-emerald-50 border-emerald-200 text-emerald-700`
-- amber: `bg-amber-50 border-amber-200 text-amber-700`
-- violet: `bg-violet-50 border-violet-200 text-violet-700`
-- slate: `bg-white border-slate-200`
-- pink: `bg-pink-50 border-pink-200 text-pink-700`
-- red: `bg-red-50 border-red-200 text-red-700`
+## Kích thước chuẩn (Tailwind class)
 
-## Kích thước chuẩn
-
-### Border radius (inline fallback)
+### Border radius
 ```
-14px  — Module wrapper (cards, panels, checklist, table container)
-10px  — Inner cards, table inner border, sub-cards
-12px  — Images
-999px — Badge pills, tag labels
-8px   — Material swatches, small elements
+rounded-xl    — Module wrapper (cards, panels, checklist, table container)
+rounded-lg    — Inner cards, table inner border, sub-cards, images
+rounded-full  — Badge pills, tag labels
 ```
 
-### Shadow (inline fallback)
+### Shadow
 ```
-0 1px 3px rgba(15,23,42,0.06)  — Nhẹ (cards, modules)
-0 1px 3px rgba(15,23,42,0.08)  — Vừa (summary, featured)
+shadow-sm   — Cards, modules, summary, featured
 ```
 
-### Spacing (inline fallback)
+### Spacing
 ```
-margin: 40px 0    — Module spacing
-padding: 24px     — Module inner padding
-margin: 32px 0    — Figure spacing
-margin: 40px 0 16px — H2 spacing
-gap: 16px         — Grid gap
-gap: 12px         — List item gap
+my-10   — Module spacing
+p-5 md:p-6   — Module inner padding
+my-8    — Figure spacing
+mt-10 mb-4   — H2 spacing
+gap-4   — Grid gap
+gap-3   — List item gap
 ```
 
 ## globals.css — CSS custom properties reference
 
-Các var() tokens vẫn dùng được — nhưng chỉ cho H2/H3 color và font-family. Bảng giá trị thực:
+Các var() tokens dùng cho phần không có Tailwind utility tương ứng:
 
-### Colors (dùng cho headings)
 ```css
 var(--foreground)         /* oklch(0 0 0) — H2, H3 text color */
 var(--font-sans)          /* Be Vietnam Pro, ui-sans-serif, sans-serif, system-ui */
 ```
 
-### Radius & Shadow (reference — inline styles dùng px trực tiếp)
-```css
-var(--radius-xl)  /* 14px */    var(--radius-lg)  /* 10px */
-var(--shadow-sm)  /* ~ 0 1px 3px rgba(15,23,42,0.06) */
-```
+Màu, radius, shadow còn lại: dùng Tailwind utility class trực tiếp (utilities này tự map sang CSS custom properties của Tailwind v4, không cần khai báo lại bằng inline style).
 
 ## Element patterns
 
 ### Lead paragraph
 ```html
-<p class="text-lg text-gray-800"
-   style="font-size:1.125rem;line-height:1.75;margin:0 0 24px;color:var(--foreground);font-family:var(--font-sans);">
+<p class="text-lg text-slate-800 leading-relaxed mb-6"
+   style="color:var(--foreground);font-family:var(--font-sans);">
   Tóm tắt ngắn cho bài viết...
 </p>
 ```
 
 ### H2
 ```html
-<h2 id="slug" class="mt-10 mb-4"
-    style="margin:40px 0 16px;color:var(--foreground);font-size:1.5rem;font-weight:700;">
+<h2 id="slug" class="mt-10 mb-4 text-2xl font-bold" style="color:var(--foreground);">
   Tiêu đề section
 </h2>
 ```
 
 ### H3
 ```html
-<h3 class="mt-6 mb-3"
-    style="margin:24px 0 12px;font-size:1.125rem;font-weight:700;color:#0f172a;">
+<h3 class="mt-6 mb-3 text-lg font-bold" style="color:var(--foreground);">
   Tiêu đề phụ
 </h3>
 ```
@@ -132,11 +117,10 @@ var(--shadow-sm)  /* ~ 0 1px 3px rgba(15,23,42,0.06) */
 
 ### Image / Figure
 ```html
-<figure class="my-8" style="margin:32px 0;">
+<figure class="my-8">
   <img src="https://..." alt="Alt text tiếng Việt" loading="lazy"
-       class="w-full h-auto rounded-lg"
-       style="max-width:100%;height:auto;border-radius:12px;display:block;" />
-  <figcaption style="margin-top:8px;color:#64748b;font-size:14px;">
+       class="w-full h-auto rounded-lg" />
+  <figcaption class="mt-2 text-sm text-slate-500">
     Caption tiếng Việt
   </figcaption>
 </figure>
@@ -144,22 +128,18 @@ var(--shadow-sm)  /* ~ 0 1px 3px rgba(15,23,42,0.06) */
 
 ### TOC / Mục lục
 ```html
-<nav aria-label="Mục lục" class="my-10 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
-     style="margin:40px 0;padding:20px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;box-shadow:0 1px 3px rgba(15,23,42,0.06);">
-  <p class="m-0 text-sm font-semibold text-slate-500"
-     style="margin:0 0 10px;color:#64748b;font-size:14px;font-weight:700;">Mục lục</p>
-  <ol class="m-0 grid grid-cols-1 md:grid-cols-2 gap-2 text-sm"
-      style="margin:0;padding-left:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px;color:#334155;">
-    <li><a href="#section-id" style="color:#0f172a;text-decoration:none;">Tên section</a></li>
+<nav aria-label="Mục lục" class="my-10 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+  <p class="m-0 mb-2.5 text-sm font-bold text-slate-500">Mục lục</p>
+  <ol class="m-0 grid grid-cols-1 md:grid-cols-2 gap-2 text-sm pl-5 text-slate-700">
+    <li><a href="#section-id" class="text-slate-950 no-underline">Tên section</a></li>
   </ol>
 </nav>
 ```
 
 ### AI Disclosure block
 ```html
-<div class="my-10 rounded-xl border border-slate-200 bg-slate-50 p-5"
-     style="margin:40px 0;padding:20px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;">
-  <p style="color:#64748b;font-size:14px;margin:0;">
+<div class="my-10 rounded-xl border border-slate-200 bg-slate-50 p-5">
+  <p class="text-sm text-slate-500 m-0">
     Written by AI - Nội dung được tạo bởi AI dựa trên quá trình tổng hợp, biên tập và kiểm tra thông tin từ nhiều nguồn tham khảo.
   </p>
 </div>
@@ -179,14 +159,13 @@ var(--shadow-sm)  /* ~ 0 1px 3px rgba(15,23,42,0.06) */
 - Heading/box/figure/CTA/disclosure có CẢ Tailwind classes VÀ inline style fallback
 - Đoạn văn thường (trừ sapo) để trần, không thêm class/style — kế thừa từ wrapper `prose`
 - Mỗi module type dùng bảng màu riêng (xem bảng Module color schemes)
-- Badge/pill dùng `border-radius:999px`
-- Inline styles dùng `px` cho spacing, không dùng `rem`
+- Badge/pill dùng `rounded-full`
 - H2 phải có `id` attribute cho TOC anchor links
-- Inner cards: `background:#fff;border:1px solid [color-100];border-radius:10px;padding:16px`
+- Inner cards: `bg-white border border-[color]-100 rounded-lg p-4`
 
 ### CẤM
 - Import external CSS, JavaScript, React components, shadcn/ui
-- Dùng `var(--primary)`, `var(--tertiary)`, `var(--muted)`, `var(--border)` cho module background/border — dùng hex từ bảng color schemes
+- Hardcode hex color, `border-radius: Npx`, hoặc `box-shadow` không chứa `var(...)` trong inline style
 - Dùng cùng 1 color scheme cho nhiều modules trong 1 bài
 
 ### NGOẠI LỆ
